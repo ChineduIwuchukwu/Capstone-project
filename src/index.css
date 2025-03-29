@@ -6,7 +6,8 @@
 
 .dash {
   background-color: #f3f5f7;
-  height: 100vh;
+  height: 100%;
+  display: flex;
 }
 
 button {
@@ -15,36 +16,49 @@ button {
   border: none;
 }
 
-.custom {
-  background-color: none;
-  color: white;
-  width: 80%;
-  margin: 0 10px 0 5px;
-  padding: 5px;
-}
-
 .sidenav {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  height: 100%;
+  gap: 1.2rem;
+  height: 100vh;
   width: 200px;
-  position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #052e30;
+  background-color: #022a52;
   overflow-x: hidden;
   padding-top: 20px;
 }
 
+.logo {
+  width: 100%;
+}
+
+.logo > img {
+  width: 100%;
+}
+
+.custom {
+  background-color: none;
+  color: white;
+  width: 80%;
+  margin: 0 10px 0 15px;
+  padding: 5px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
 .main-nav {
-  margin-left: 250px;
   padding: 20px;
+  flex: 1;
+  margin-top: 1rem;
 }
 
 .logout {
-  margin-top: 3rem;
+  margin-top: 5rem;
 }
 
 .welcome-text {
@@ -56,26 +70,363 @@ button {
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .profile {
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  width: 350px;
 }
 
 .search {
-  height: 40px;
+  background-color: #fafafa;
   padding: 5px;
+  display: flex;
+  border: 1px solid #b3b3b3;
+  border-radius: 8px;
+  gap: 5px;
+  align-items: center;
+}
+
+.search-bar {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+}
+
+.search-icon {
+  padding: 5px;
+  background-color: white;
+  border-radius: 50%;
+  align-items: center;
+}
+
+.notification {
+  background-color: #fafafa;
+  padding: 1px;
+  border-radius: 8px;
 }
 
 .profile-img {
-  width: 50px;
-  height: 50px;
-  border: 1px solid black;
+  width: 10%;
   border-radius: 50%;
 }
 
 .profile-img > img {
   width: 100%;
   border-radius: 100%;
+}
+
+.graph-cards,
+.transactions-cards {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 350px;
+}
+
+.graph,
+.transactions {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.cards,
+.spending-limit {
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.cards {
+  background-color: white;
+}
+
+.spending-limit {
+  background-color: white;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.credit-cards {
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.cc {
+  background-color: gray;
+  padding: 6px;
+  border-radius: 8px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.saving-goals {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 4px;
+}
+
+.saving-goals-icon {
+  width: 15px;
+  height: 15px;
+  background-color: rgb(20, 99, 202);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 8px;
+}
+
+.icon {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.v-head,
+.d-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.v-head > span,
+.d-head > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.label-box {
+  width: 10px;
+  height: 10px;
+  background-color: royalblue;
+  border-radius: 2px;
+}
+
+.box-d {
+  width: 10px;
+  height: 10px;
+  background-color: skyblue;
+  border-radius: 2px;
+}
+
+.vacation-slider,
+.payment-slider {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+
+.vacation-slider > p,
+.payment-slider > p {
+  font-size: 10px;
+}
+
+.slider {
+  width: 100%;
+  height: 8px;
+  background-color: rgb(237, 239, 247);
+  border-radius: 6px;
+}
+
+.slider-p {
+  width: 100%;
+  height: 8px;
+  background-color: rgb(228, 241, 247);
+  border-radius: 6px;
+}
+
+.slider > div {
+  width: 80%;
+  height: 8px;
+  background-color: royalblue;
+  border-radius: 6px;
+}
+
+.slider-p > div {
+  width: 30%;
+  height: 8px;
+  background-color: skyblue;
+  border-radius: 6px;
+}
+
+.quick-tf-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quick-tf-head > span {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.open {
+  color: lightskyblue;
+  width: 12px;
+  height: 12px;
+}
+
+.quick-tf-head-1 {
+  font-size: 14px;
+}
+
+.quick-tf-head-p {
+  font-size: 12px;
+  color: lightskyblue;
+}
+
+.quick-tf-images {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-img {
+  width: 40px;
+  border-radius: 40px;
+}
+
+.add-img > img {
+  width: 100%;
+}
+
+.cc-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cc-head > h4 {
+  color: white;
+  font-size: 18px;
+}
+
+.low {
+  color: white;
+  opacity: 0.5;
+}
+
+.visa-img {
+  width: 60px;
+}
+
+.visa-img > img {
+  width: 100%;
+}
+
+.transactions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tf-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.first-transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f1f5f9;
+  padding: 5px 10px;
+  border-radius: 12px;
+}
+
+.tf {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.tf-img {
+  width: 50px;
+}
+
+.tf-img > img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.tf-text,
+.Date {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tf-text > h4 {
+  font-size: 16px;
+}
+
+.tf-text > P {
+  font-size: 12px;
+  color: rgb(143, 141, 141);
+}
+
+.credit-cards > span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.view {
+  font-weight: 500;
+  font-size: 10px;
+  padding: 3px 4px;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+
+.Date > h3 {
+  font-size: 16px;
+}
+
+.Date > P {
+  font-size: 12px;
+  color: gray;
+}
+
+.completed {
+  color: rgb(0, 218, 0);
+  font-size: 10px;
+  padding: 5px;
+  background-color: rgb(177, 235, 177);
+  width: fit-content;
+  border-radius: 6px;
+}
+
+.failed {
+  color: rgb(218, 0, 11);
+  font-size: 10px;
+  padding: 5px 12px;
+  background-color: rgb(236, 182, 184);
+  width: fit-content;
+  border-radius: 6px;
+}
+
+.pending {
+  color: rgb(218, 167, 0);
+  font-size: 10px;
+  padding: 5px 14px;
+  background-color: rgb(247, 229, 171);
+  width: fit-content;
+  border-radius: 6px;
 }
