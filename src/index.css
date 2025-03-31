@@ -6,7 +6,8 @@
 
 .dash {
   background-color: #f3f5f7;
-  height: 100%;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
 }
 
@@ -119,21 +120,46 @@ button {
   border-radius: 100%;
 }
 
-.graph-cards,
+.graph-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.graph {
+  width: 60%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards {
+  width: 35%;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 1rem;
+  border-radius: 12px;
+  justify-content: space-between;
+}
+
 .transactions-cards {
   margin-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 350px;
 }
 
-.graph,
 .transactions {
   background-color: white;
   padding: 1rem;
   border-radius: 12px;
 }
 
-.cards,
 .spending-limit {
   margin: 0 20px;
   display: flex;
@@ -193,17 +219,23 @@ button {
   height: 15px !important;
 }
 
-.v-head,
-.d-head {
+.v-head {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 2px;
 }
 
-.v-head > span,
-.d-head > span {
+.progress-bar {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .label-box {
@@ -213,53 +245,84 @@ button {
   border-radius: 2px;
 }
 
-.box-d {
-  width: 10px;
-  height: 10px;
-  background-color: skyblue;
-  border-radius: 2px;
-}
-
-.vacation-slider,
-.payment-slider {
-  margin: 10px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 5px;
-}
-
-.vacation-slider > p,
-.payment-slider > p {
-  font-size: 10px;
-}
-
 .slider {
   width: 100%;
-  height: 8px;
+  height: 7px;
   background-color: rgb(237, 239, 247);
   border-radius: 6px;
 }
 
-.slider-p {
-  width: 100%;
-  height: 8px;
-  background-color: rgb(228, 241, 247);
-  border-radius: 6px;
-}
-
-.slider > div {
-  width: 80%;
-  height: 8px;
+.inner-slider-one {
+  width: 30%;
+  height: 7px;
   background-color: royalblue;
   border-radius: 6px;
 }
 
-.slider-p > div {
-  width: 30%;
-  height: 8px;
+.inner-slider-two {
+  width: 60%;
+  height: 7px;
   background-color: skyblue;
   border-radius: 6px;
+}
+
+.inner-slider-three {
+  width: 80%;
+  height: 7px;
+  background-color: navy;
+  border-radius: 6px;
+}
+
+.progress {
+  font-size: 12px;
+}
+
+.spending-slider {
+  margin-top: 5px;
+  width: 100%;
+  height: 20px;
+  background-color: rgb(188, 231, 248);
+  border-radius: 8px;
+}
+
+.spending-progress-1 {
+  width: 75%;
+  height: 20px;
+  border-radius: 8px 0px 0px 8px;
+  background-color: rgb(84, 189, 224);
+}
+
+.budget-limit {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.limit-content {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.limit-content > h5 {
+  font-size: 18px;
+}
+
+.budget-limit > p {
+  font-size: 14px;
+}
+
+.ss {
+  width: 8px;
+  height: 15px;
+  background-color: rgb(188, 231, 248);
+}
+
+.ss-1 {
+  width: 8px;
+  height: 15px;
+  background-color: rgb(188, 231, 248);
 }
 
 .quick-tf-head {

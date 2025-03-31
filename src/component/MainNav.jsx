@@ -10,12 +10,32 @@ import Viva from "../images/Viva.png";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import Visa from "../images/Visa.png";
 import KeyboardArrowRightOutlinedIcon from "@mui/icons-material/KeyboardArrowRightOutlined";
-
+import { Bar } from "react-chartjs-2";
+import "chart.js/auto";
+import { graphData } from "../data/sourceData";
 const MainNav = () => {
   const saving = [
-    { label: "Vacation", amount: "$10,000", progress: "25%", styles: "" },
-    { label: "House Payment", amount: "$127,000", progress: "65%" },
-    { label: "Vacation", amount: "$10,000", progress: "25%" },
+    {
+      label: "Vacation",
+      amount: "$10,000",
+      progress: "25%",
+      styles: "inner-slider-one",
+      bulletColor: "royalblue",
+    },
+    {
+      label: "Mortgage Payment",
+      amount: "$127,000",
+      progress: "65%",
+      styles: "inner-slider-two",
+      bulletColor: "skyblue",
+    },
+    {
+      label: "Buy a car",
+      amount: "$51,290",
+      progress: "80%",
+      styles: "inner-slider-three",
+      bulletColor: "navy",
+    },
   ];
   return (
     <div className="main-nav">
@@ -43,7 +63,12 @@ const MainNav = () => {
       <div className="content">
         <div className="graph-cards">
           <div className="graph">
-            <h2>This will contain the graph</h2>
+            <Bar
+              data={{
+                labels: graphData.labels,
+                datasets: graphData.datasets,
+              }}
+            />
           </div>
 
           <div className="cards">
@@ -53,24 +78,49 @@ const MainNav = () => {
                 <AddOutlinedIcon className="icon" />
               </div>
             </div>
-            {saving.map(({ label, amount, progress }, index) => (
-              <div key={index} className="Vacation">
-                <div className="v-head">
-                  <span>
-                    <div className="label-box"></div>
-                    <h6>{label}</h6>
-                  </span>
-                  <h6>{amount}</h6>
-                </div>
 
-                <div className="vacation-slider">
-                  <div className="slider">
-                    <div></div>
+            {saving.map(
+              ({ label, amount, progress, styles, bulletColor }, index) => (
+                <div key={index} className="Vacation">
+                  <div className="v-head">
+                    <span className="span">
+                      <div
+                        style={{ backgroundColor: bulletColor }}
+                        className="label-box"
+                      ></div>
+                      <h6>{label}</h6>
+                    </span>
+                    <h6>{amount}</h6>
                   </div>
-                  <p>{progress}</p>
+
+                  <div className="progress-bar">
+                    <div className="slider">
+                      <div className={styles}></div>
+                    </div>
+                    <p className="progress">{progress}</p>
+                  </div>
                 </div>
+              )
+            )}
+
+            <div className="spendinng-progress">
+              <h4>Expenses</h4>
+              <div className="spending-slider">
+                <div className="spending-progress-1"></div>
               </div>
-            ))}
+              <span className="budget-limit">
+                <span className="limit-content">
+                  <div className="ss"></div> <h5>$7000</h5>
+                </span>
+                <p>Spent already during the month</p>
+              </span>
+              <span className="budget-limit">
+                <span className="limit-content">
+                  <div className="ss-1"></div> <h5>$10000</h5>
+                </span>
+                <p>Budget for the month</p>
+              </span>
+            </div>
           </div>
         </div>
 
@@ -140,7 +190,7 @@ const MainNav = () => {
               </div>
               <Button className="pending" name="Pending" />
             </div>
-            <div className="first-transaction">
+            {/* <div className="first-transaction">
               <div className="tf">
                 <div className="tf-img">
                   <img src={Viva} alt="" />
@@ -158,11 +208,9 @@ const MainNav = () => {
                 <h3>$4901.87</h3>
               </div>
               <Button className="completed" name="Completed" />
-            </div>
+            </div> */}
           </div>
           <div className="spending-limit">
-            <h5>This is the div for the spending limit</h5>
-
             <div className="quick-tf">
               <div className="quick-tf-head">
                 <p className="quick-tf-head-1">Quick tranaction</p>
