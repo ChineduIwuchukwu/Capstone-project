@@ -47,12 +47,12 @@ const MainNav = () => {
 
         <div className="profile">
           <div className="search">
-            <SearchOutlinedIcon />
+            <SearchOutlinedIcon className="search-icon" />
             <input type="text" placeholder="Search" className="search-bar" />
           </div>
 
           <div className="notification">
-            <NotificationsNoneOutlinedIcon />
+            <NotificationsNoneOutlinedIcon className="notify-icon" />
           </div>
 
           <div className="profile-img">
