@@ -13,6 +13,7 @@ import KeyboardArrowRightOutlinedIcon from "@mui/icons-material/KeyboardArrowRig
 import { Bar } from "react-chartjs-2";
 import "chart.js/auto";
 import { graphData } from "../data/sourceData";
+
 const MainNav = () => {
   const saving = [
     {
@@ -37,6 +38,7 @@ const MainNav = () => {
       bulletColor: "navy",
     },
   ];
+
   return (
     <div className="main-nav">
       <div className="header">
@@ -73,7 +75,7 @@ const MainNav = () => {
 
           <div className="cards">
             <div className="saving-goals">
-              <h5>Saving goals</h5>
+              <h4>Saving goals</h4>
               <div className="saving-goals-icon">
                 <AddOutlinedIcon className="icon" />
               </div>
@@ -112,7 +114,7 @@ const MainNav = () => {
                 <span className="limit-content">
                   <div className="ss"></div> <h5>$7000</h5>
                 </span>
-                <p>Spent already during the month</p>
+                <p>Spent already</p>
               </span>
               <span className="budget-limit">
                 <span className="limit-content">
@@ -147,8 +149,8 @@ const MainNav = () => {
               </div>
               <div className="price">
                 <h3>$4901.87</h3>
+                <Button className="completed" name="Completed" />
               </div>
-              <Button className="completed" name="Completed" />
             </div>
 
             <div className="first-transaction">
@@ -167,8 +169,8 @@ const MainNav = () => {
               </div>
               <div className="price">
                 <h3>$4901.87</h3>
+                <Button className="failed" name="Decined" />
               </div>
-              <Button className="failed" name="Decined" />
             </div>
             <div className="first-transaction">
               <div className="tf">
@@ -180,15 +182,14 @@ const MainNav = () => {
                   <p>Debit card</p>
                 </div>
               </div>
-
               <div className="Date">
                 <h3>Mar, 22 2025</h3>
                 <p>10:20 am</p>
               </div>
               <div className="price">
                 <h3>$650.70</h3>
+                <Button className="pending" name="Pending" />
               </div>
-              <Button className="pending" name="Pending" />
             </div>
             {/* <div className="first-transaction">
               <div className="tf">
@@ -220,7 +221,7 @@ const MainNav = () => {
                 </span>
               </div>
               <div className="quick-tf-images">
-                <div className="add-more"></div>
+                {/* <div className="add-more"></div> */}
                 <div className="add-img">
                   <img src={Glovo} alt="" />
                 </div>
